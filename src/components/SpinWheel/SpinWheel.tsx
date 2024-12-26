@@ -13,6 +13,8 @@ export default function SpinWheel(props: SpinWheelProps) {
   const [winner, setWinner] = useState<string | null>(null);
   const wheelRef = useRef<HTMLDivElement>(null);
 
+  const RADIUS = 150;
+  const CENTER: Point2D = { x: 200, y: 200 };
 
   const spinWheel = (): void => {
     if (isSpinning) return;
@@ -44,8 +46,6 @@ export default function SpinWheel(props: SpinWheelProps) {
   };
 
   const generateSlices = () => {
-    const radius = 150;
-    const center: Point2D = { x: 200, y: 200 };
     let currentAngle = 0;
     const totalPoints = props.points.reduce((sum, p) => sum + p, 0);
 
@@ -54,21 +54,21 @@ export default function SpinWheel(props: SpinWheelProps) {
       const startAngle = currentAngle;
       const endAngle = currentAngle + sliceAngle;
 
-      const startX = center.x + radius * Math.cos((startAngle * Math.PI) / 180);
-      const startY = center.y + radius * Math.sin((startAngle * Math.PI) / 180);
-      const endX = center.x + radius * Math.cos((endAngle * Math.PI) / 180);
-      const endY = center.y + radius * Math.sin((endAngle * Math.PI) / 180);
+      const startX = CENTER.x + RADIUS * Math.cos((startAngle * Math.PI) / 180);
+      const startY = CENTER.y + RADIUS * Math.sin((startAngle * Math.PI) / 180);
+      const endX = CENTER.x + RADIUS * Math.cos((endAngle * Math.PI) / 180);
+      const endY = CENTER.y + RADIUS * Math.sin((endAngle * Math.PI) / 180);
 
       // Calculate text position and rotation
       const textAngle = startAngle + (sliceAngle / 2);
-      const textRadius = radius * 0.6;
-      const textX = center.x + textRadius * Math.cos((textAngle * Math.PI) / 180);
-      const textY = center.y + textRadius * Math.sin((textAngle * Math.PI) / 180);
+      const textRadius = RADIUS * 0.6;
+      const textX = CENTER.x + textRadius * Math.cos((textAngle * Math.PI) / 180);
+      const textY = CENTER.y + textRadius * Math.sin((textAngle * Math.PI) / 180);
 
-      const path = `M ${center.x},${center.y} 
-                    L ${getWobblyLine(center.x, center.y, startX, startY)}
-                    A ${radius} ${radius} 0 ${sliceAngle > 180 ? 1 : 0} 1 ${endX} ${endY}
-                    L ${getWobblyLine(endX, endY, center.x, center.y)}`;
+      const path = `M ${CENTER.x},${CENTER.y} 
+                    L ${getWobblyLine(CENTER.x, CENTER.y, startX, startY)}
+                    A ${RADIUS} ${RADIUS} 0 ${sliceAngle > 180 ? 1 : 0} 1 ${endX} ${endY}
+                    L ${getWobblyLine(endX, endY, CENTER.x, CENTER.y)}`;
 
       currentAngle += sliceAngle;
 
@@ -108,9 +108,9 @@ export default function SpinWheel(props: SpinWheelProps) {
         >
           <svg viewBox="0 0 400 400">
             <circle
-              cx="200"
-              cy="200"
-              r="150"
+              cx={CENTER.x}
+              cy={CENTER.y}
+              r={RADIUS}
               fill="none"
               stroke="black"
               strokeWidth="2"
