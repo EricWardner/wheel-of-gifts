@@ -4,9 +4,7 @@ import ControlledSpinWheel from './components/SpinWheel/ControlledSpinWheel'
 function App() {
 
   return (
-    <>
-      <ControlledSpinWheel />
-    </>
+    <ControlledSpinWheel />
   )
 }
 

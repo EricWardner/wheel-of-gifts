@@ -18,7 +18,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
   onNameChange
 }) => {
   return (
-    <div>
+    <div className="wheel-controls-container">
       <input
         type="range"
         min="2" 

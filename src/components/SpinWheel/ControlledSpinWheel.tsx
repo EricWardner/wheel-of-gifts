@@ -34,32 +34,28 @@ const ControlledSpinWheel: React.FC = () => {
   };
 
   return (
-    <div className="container">
-      <div className="flex flex-col md:flex-row gap-8">
-        <div className="md:w-1/3">
-          <WheelControls
-            numOptions={numOptions}
-            points={points}
-            giftNames={giftNames}
-            onNumOptionsChange={handleNumOptionsChange}
-            onPointsChange={handlePointChange}
-            onNameChange={handleNameChange}
-          />
-        </div>
-        
-        <div className="md:w-2/3">
-          <SpinWheel
-            points={points}
-            giftNames={giftNames}
-            onWinnerSelected={handleWinnerSelected}
-          />
-          
-          {winner && (
-            <div className="winner-announcement">
-              🎉 Winner: {winner}!
-            </div>
-          )}
-        </div>
+    <div className="controlled-wheel-container">
+      <WheelControls
+        numOptions={numOptions}
+        points={points}
+        giftNames={giftNames}
+        onNumOptionsChange={handleNumOptionsChange}
+        onPointsChange={handlePointChange}
+        onNameChange={handleNameChange}
+      />
+
+      <div className="game-container">
+        <SpinWheel
+          points={points}
+          giftNames={giftNames}
+          onWinnerSelected={handleWinnerSelected}
+        />
+
+        {winner && (
+          <div className="winner-announcement">
+            🎉 Winner: {winner}!
+          </div>
+        )}
       </div>
     </div>
   );
