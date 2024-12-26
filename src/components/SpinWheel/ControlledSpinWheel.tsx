@@ -6,7 +6,6 @@ const ControlledSpinWheel: React.FC = () => {
   const [numOptions, setNumOptions] = useState<number>(4);
   const [points, setPoints] = useState<number[]>(Array(4).fill(1));
   const [giftNames, setGiftNames] = useState<string[]>(Array(4).fill(''));
-  const [winner, setWinner] = useState<string | null>(null);
 
   const handleNumOptionsChange = (newNum: number): void => {
     setNumOptions(newNum);

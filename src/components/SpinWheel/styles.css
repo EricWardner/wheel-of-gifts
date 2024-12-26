@@ -43,7 +43,7 @@
   
   .wheel-pointer {
     position: absolute;
-    left: 8rem;
+    left: 9rem;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
