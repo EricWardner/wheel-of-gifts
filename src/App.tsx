@@ -1,11 +1,11 @@
 import './App.css'
-import SpinWheel from './components/SpinWheel/SpinWheel'
+import ControlledSpinWheel from './components/SpinWheel/ControlledSpinWheel'
 
 function App() {
 
   return (
     <>
-      <SpinWheel />
+      <ControlledSpinWheel />
     </>
   )
 }
