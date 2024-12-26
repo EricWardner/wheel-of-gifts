@@ -30,6 +30,10 @@ const ControlledSpinWheel: React.FC = () => {
 
   return (
     <div className="controlled-wheel-container">
+      <SpinWheel
+        points={points}
+        giftNames={giftNames}
+      />
       <WheelControls
         numOptions={numOptions}
         points={points}
@@ -37,11 +41,6 @@ const ControlledSpinWheel: React.FC = () => {
         onNumOptionsChange={handleNumOptionsChange}
         onPointsChange={handlePointChange}
         onNameChange={handleNameChange}
-      />
-
-      <SpinWheel
-        points={points}
-        giftNames={giftNames}
       />
     </div>
   );
