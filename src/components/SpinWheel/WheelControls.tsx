@@ -18,16 +18,16 @@ const WheelControls: React.FC<WheelControlsProps> = ({
   onNameChange
 }) => {
   return (
-    <div className="wheel-controls-container">
+    <div className="controls-container">
       <input
         type="range"
-        min="2" 
-        max="10" 
+        min="2"
+        max="10"
         value={numOptions}
         onChange={(e) => onNumOptionsChange(parseInt(e.target.value))}
         className="number-slider"
       />
-      
+
       <div className="gifts-grid">
         {points.map((point, index) => (
           <div key={index} className="gift-input-group">

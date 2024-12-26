@@ -29,10 +29,6 @@ const ControlledSpinWheel: React.FC = () => {
     setGiftNames(newNames);
   };
 
-  const handleWinnerSelected = (winner: string): void => {
-    setWinner(winner);
-  };
-
   return (
     <div className="controlled-wheel-container">
       <WheelControls
@@ -44,19 +40,10 @@ const ControlledSpinWheel: React.FC = () => {
         onNameChange={handleNameChange}
       />
 
-      <div className="game-container">
-        <SpinWheel
-          points={points}
-          giftNames={giftNames}
-          onWinnerSelected={handleWinnerSelected}
-        />
-
-        {winner && (
-          <div className="winner-announcement">
-            🎉 Winner: {winner}!
-          </div>
-        )}
-      </div>
+      <SpinWheel
+        points={points}
+        giftNames={giftNames}
+      />
     </div>
   );
 };

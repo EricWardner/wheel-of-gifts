@@ -11,7 +11,6 @@ export function calculateWinner(currentRotation: number, currentPoints: number[]
     let currentAngle = 0;
     for (let i = 0; i < currentPoints.length; i++) {
         const sliceAngle = (currentPoints[i] / totalPoints) * 360;
-        console.log(currentNames[i], sliceAngle, currentAngle, normalizedRotation)
         if (normalizedRotation >= currentAngle && normalizedRotation < currentAngle + sliceAngle) {
             return currentNames[i] || `Option ${i + 1}`;
         }

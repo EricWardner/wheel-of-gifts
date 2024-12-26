@@ -5,7 +5,6 @@ import './styles.css'
 interface SpinWheelProps {
   points: number[];
   giftNames: string[];
-  onWinnerSelected: (winner: string) => void;
 }
 
 export default function SpinWheel(props: SpinWheelProps) {
@@ -98,7 +97,7 @@ export default function SpinWheel(props: SpinWheelProps) {
   };
 
   return (
-    <div className="container">
+    <div className="game-container">
       <div className="wheel-container">
         <div className="wheel-pointer" />
 
