@@ -31,7 +31,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
         />
       </Box>
 
-      <Flex direction="column" gap="4">
+      <Flex direction="column" gap={{ initial: "8", sm: "4" }} >
         {points.map((point, index) => (
           <Flex 
             key={index} 
