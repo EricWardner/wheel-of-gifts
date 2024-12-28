@@ -1,8 +1,7 @@
 import { useState, useRef } from 'react';
 import { calculateWinner, getWobblyLine, Point2D } from './utils';
 import './styles.css'
-import { Box, Button, Flex } from '@radix-ui/themes';
-import { TriangleRightIcon } from '@radix-ui/react-icons';
+import { Button, Flex } from '@radix-ui/themes';
 
 interface SpinWheelProps {
   points: number[];

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import WheelControls from './WheelControls';
 import SpinWheel from './SpinWheel';
-import { Box, Flex } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 
 const ControlledSpinWheel: React.FC = () => {
   const [numOptions, setNumOptions] = useState<number>(4);
