@@ -31,7 +31,7 @@
   }
   
   .points-slider {
-    width: 6rem;
+    width: 100%;
   }
   
   .wheel-container {
@@ -43,7 +43,7 @@
   
   .wheel-pointer {
     position: absolute;
-    left: 9rem;
+    left: 175px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
@@ -68,7 +68,6 @@
   .spin-button {
     width: 100%;
     margin-top: 1rem;
-    padding: 0.5rem;
     background-color: #3b82f6;
     color: white;
     border: none;
@@ -90,23 +89,6 @@
     height: 8px;
     background: #e5e7eb;
     border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    background: #3b82f6;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  input[type="range"]::-moz-range-thumb {
-    width: 16px;
-    height: 16px;
-    background: #3b82f6;
-    border-radius: 50%;
     cursor: pointer;
   }
 

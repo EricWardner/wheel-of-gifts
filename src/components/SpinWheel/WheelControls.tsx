@@ -1,3 +1,5 @@
+import { Box, Flex, Grid, Slider } from '@radix-ui/themes';
+import "@radix-ui/themes/styles.css";
 import React from 'react';
 
 interface WheelControlsProps {
@@ -18,37 +20,34 @@ const WheelControls: React.FC<WheelControlsProps> = ({
   onNameChange
 }) => {
   return (
-    <div className="controls-container">
-      <input
-        type="range"
-        min="2"
-        max="10"
-        value={numOptions}
-        onChange={(e) => onNumOptionsChange(parseInt(e.target.value))}
-        className="number-slider"
+    <Flex direction="column" gap="32px">
+      <Slider
+        min={2}
+        max={10}
+        value={[numOptions]}
+        onValueChange={(e) => onNumOptionsChange(e[0])}
+        size="3"
       />
 
-      <div className="gifts-grid">
+      <Grid columns={"1"} gap="6">
         {points.map((point, index) => (
-          <div key={index} className="gift-input-group">
+          <Flex align={"center"} gap={"4"}>
             <input
               value={giftNames[index]}
               onChange={(e) => onNameChange(index, e.target.value)}
               placeholder={`Gift ${index + 1} name`}
               className="gift-name-input"
             />
-            <input
-              type="range"
-              value={point}
-              onChange={(e) => onPointsChange(index, Math.max(1, parseInt(e.target.value) || 1))}
-              min="1"
-              max="10"
-              className="points-slider"
+            <Slider
+              value={[point]}
+              onValueChange={(e) => onPointsChange(index, Math.max(1, e[0] || 1))}
+              min={1}
+              max={10}
             />
-          </div>
+          </Flex>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Flex>
   );
 };
 

@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 import { calculateWinner, getWobblyLine, Point2D } from './utils';
 import './styles.css'
+import { Box, Button, Flex } from '@radix-ui/themes';
+import { TriangleRightIcon } from '@radix-ui/react-icons';
 
 interface SpinWheelProps {
   points: number[];
@@ -97,16 +99,16 @@ export default function SpinWheel(props: SpinWheelProps) {
   };
 
   return (
-    <div className="game-container">
-      <div className="wheel-container">
-        <div className="wheel-pointer" />
+    <Flex direction={"column"} gap={"3"}>
+      <Flex align={"center"}>
+        <svg height="40px" style={{ position: "relative", zIndex: 10 }} viewBox="6 4 4.5 7" xmlns="http://www.w3.org/2000/svg"><path d="M6 11L6 4L10.5 7.5L6 11Z" fill="currentColor" /></svg>
 
         <div
           ref={wheelRef}
           className="wheel"
           style={{ transform: `rotate(${rotation}deg)` }}
         >
-          <svg viewBox="0 0 400 400">
+          <svg viewBox="50 50 304 304">
             <circle
               cx={CENTER.x}
               cy={CENTER.y}
@@ -119,21 +121,21 @@ export default function SpinWheel(props: SpinWheelProps) {
             {generateSlices()}
           </svg>
         </div>
-      </div>
+      </Flex>
 
-      <button
+      <Button
         onClick={spinWheel}
         disabled={isSpinning}
-        className="spin-button"
+        size="3"
       >
         {isSpinning ? 'Spinning...' : 'Spin the Wheel!'}
-      </button>
+      </Button>
 
       {winner && (
         <div className="winner-announcement">
           🎉 Winner: {winner}!
         </div>
       )}
-    </div>
+    </Flex>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WheelControls from './WheelControls';
 import SpinWheel from './SpinWheel';
+import { Box, Flex } from '@radix-ui/themes';
 
 const ControlledSpinWheel: React.FC = () => {
   const [numOptions, setNumOptions] = useState<number>(4);
@@ -29,7 +30,7 @@ const ControlledSpinWheel: React.FC = () => {
   };
 
   return (
-    <div className="controlled-wheel-container">
+    <Flex direction={{lg: "row", initial: "column"}} gap={{lg: "150px", initial: "40px"}}>
       <SpinWheel
         points={points}
         giftNames={giftNames}
@@ -42,7 +43,7 @@ const ControlledSpinWheel: React.FC = () => {
         onPointsChange={handlePointChange}
         onNameChange={handleNameChange}
       />
-    </div>
+    </Flex>
   );
 };
 
