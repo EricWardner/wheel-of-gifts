@@ -1,37 +1,38 @@
-  .gift-slice-label {
-    font-size: 20px;
-  }
-  
-  .wheel {
-    transition: transform 10s cubic-bezier(0.2, 0.5, 0.2, 1);
-    transform-origin: center center;
-  }
-  
-  .wheel svg {
-    width: 100%;
-    max-width: 28rem;
-    margin: 0 auto;
+.gift-slice-label {
+  font-size: 20px;
+}
+
+.wheel {
+  transition: transform 10s cubic-bezier(0.2, 0.5, 0.2, 1);
+  transform-origin: center center;
+}
+
+.wheel svg {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.winner-announcement {
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2563eb;
+  background-color: #eff6ff;
+  border-radius: 4px;
+  animation: pop-in 0.3s ease-out;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
   }
 
-  .winner-announcement {
-    margin-top: 1rem;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #2563eb;
-    background-color: #eff6ff;
-    border-radius: 4px;
-    animation: pop-in 0.3s ease-out;
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  @keyframes pop-in {
-    0% {
-      transform: scale(0.8);
-      opacity: 0;
-    }
-    100% {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
+}
