@@ -30,7 +30,7 @@ const ControlledSpinWheel: React.FC = () => {
   };
 
   return (
-    <Flex direction={{lg: "row", initial: "column"}} gap={{lg: "150px", initial: "40px"}}>
+    <Flex justify={"center"} direction={{lg: "row", initial: "column"}} gap={{lg: "150px", initial: "40px"}}>
       <SpinWheel
         points={points}
         giftNames={giftNames}
