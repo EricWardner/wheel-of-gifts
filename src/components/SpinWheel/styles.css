@@ -1,57 +1,5 @@
-.container {
-    padding: 1.5rem;
-  }
-  
-  .number-slider {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-  
-  .gifts-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .gift-input-group {
-    display: flex;
-    gap: 0.5rem;
-  }
-  
-  .gift-name-input {
-    flex-grow: 1;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-
   .gift-slice-label {
     font-size: 20px;
-  }
-  
-  .points-slider {
-    width: 100%;
-  }
-  
-  .wheel-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .wheel-pointer {
-    position: absolute;
-    left: 175px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 40px solid black;
   }
   
   .wheel {
@@ -63,33 +11,6 @@
     width: 100%;
     max-width: 28rem;
     margin: 0 auto;
-  }
-  
-  .spin-button {
-    width: 100%;
-    margin-top: 1rem;
-    background-color: #3b82f6;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .spin-button:hover {
-    background-color: #2563eb;
-  }
-  
-  .spin-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  /* Range input styling */
-  input[type="range"] {
-    height: 8px;
-    background: #e5e7eb;
-    border-radius: 4px;
-    cursor: pointer;
   }
 
   .winner-announcement {
