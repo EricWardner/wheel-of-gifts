@@ -41,6 +41,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
           >
             <TextField.Root style={{ minWidth: '140px' }}
                 value={giftNames[index]}
+                size="3"
                 onChange={(e) => onNameChange(index, e.target.value)}
                 placeholder={`Gift ${index + 1} name`}
               />
@@ -50,7 +51,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
                 onValueChange={(e) => onPointsChange(index, Math.max(1, e[0] || 1))}
                 min={1}
                 max={10}
-                size="2"
+                size="3"
               />
             </Box>
           </Flex>
