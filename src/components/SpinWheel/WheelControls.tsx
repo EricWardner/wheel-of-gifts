@@ -33,8 +33,8 @@ const WheelControls: React.FC<WheelControlsProps> = ({
         </Box>
 
         <Card>
-          <ScrollArea>
-            <Flex height="300px" direction="column" gap={{ initial: "8", sm: "4" }} >
+          <ScrollArea type='auto' style={{ height: 250 }}>
+            <Flex direction="column" gap={{ initial: "8", sm: "4" }} >
               {points.map((point, index) => (
                 <Flex
                   key={index}
