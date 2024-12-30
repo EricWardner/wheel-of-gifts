@@ -88,7 +88,7 @@ export default function SpinWheel(props: SpinWheelProps) {
             y={textY}
             fill="white"
             textAnchor="middle"
-            transform={`rotate(${textAngle}, ${textX}, ${textY})`}
+            transform={`rotate(${textAngle -180}, ${textX}, ${textY})`}
             className="gift-slice-label"
           >
             {props.giftNames[index]}
