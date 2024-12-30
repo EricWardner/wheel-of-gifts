@@ -3,11 +3,12 @@ import WheelControls from './WheelControls';
 import SpinWheel from './SpinWheel';
 import { Flex } from '@radix-ui/themes';
 
-const initialGiftNames = ['Socks', 'Scratch-Offs', 'A Candle', '$10,000', 'Coal']
+const initialGiftNames =        ['Socks', 'Coal', 'A Candle', '$10,000', 'Scratch-Offs']
+const initialGiftProbabilities = [  10,     4,         10,        1,       8  ]
 
 const ControlledSpinWheel: React.FC = () => {
   const [numOptions, setNumOptions] = useState<number>(5);
-  const [points, setPoints] = useState<number[]>(Array(5).fill(5));
+  const [points, setPoints] = useState<number[]>(initialGiftProbabilities);
   const [giftNames, setGiftNames] = useState<string[]>(initialGiftNames);
   const [isSpinning, setIsSpinning] = useState<boolean>(false); // Add this
 
