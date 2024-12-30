@@ -9,6 +9,7 @@ const ControlledSpinWheel: React.FC = () => {
   const [numOptions, setNumOptions] = useState<number>(5);
   const [points, setPoints] = useState<number[]>(Array(5).fill(5));
   const [giftNames, setGiftNames] = useState<string[]>(initialGiftNames);
+  const [isSpinning, setIsSpinning] = useState<boolean>(false); // Add this
 
   const handleNumOptionsChange = (newNum: number): void => {
     setNumOptions(newNum);
@@ -36,11 +37,13 @@ const ControlledSpinWheel: React.FC = () => {
       <SpinWheel
         points={points}
         giftNames={giftNames}
+        onSpinningChange={setIsSpinning}
       />
       <WheelControls
         numOptions={numOptions}
         points={points}
         giftNames={giftNames}
+        disabled={isSpinning}
         onNumOptionsChange={handleNumOptionsChange}
         onPointsChange={handlePointChange}
         onNameChange={handleNameChange}

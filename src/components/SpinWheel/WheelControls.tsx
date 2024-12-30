@@ -6,6 +6,7 @@ interface WheelControlsProps {
   numOptions: number;
   points: number[];
   giftNames: string[];
+  disabled: boolean;
   onNumOptionsChange: (value: number) => void;
   onPointsChange: (index: number, value: number) => void;
   onNameChange: (index: number, value: string) => void;
@@ -15,6 +16,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
   numOptions,
   points,
   giftNames,
+  disabled,
   onNumOptionsChange,
   onPointsChange,
   onNameChange
@@ -29,6 +31,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
             value={[numOptions]}
             onValueChange={(e) => onNumOptionsChange(e[0])}
             size="3"
+            disabled={disabled}
           />
         </Box>
 
@@ -47,6 +50,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
                     size="3"
                     onChange={(e) => onNameChange(index, e.target.value)}
                     placeholder={`Gift ${index + 1} name`}
+                    disabled={disabled}
                   />
                   <Box minWidth="200px">
                     <Slider
@@ -55,6 +59,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
                       min={1}
                       max={10}
                       size="3"
+                      disabled={disabled}
                     />
                   </Box>
                 </Flex>

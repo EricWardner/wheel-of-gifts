@@ -7,6 +7,7 @@ import SpinTheWheelTitle from '../../SpinTheWheelTitle';
 interface SpinWheelProps {
   points: number[];
   giftNames: string[];
+  onSpinningChange?: (spinning: boolean) => void;
 }
 
 export default function SpinWheel(props: SpinWheelProps) {
@@ -22,6 +23,7 @@ export default function SpinWheel(props: SpinWheelProps) {
     if (isSpinning) return;
 
     setIsSpinning(true);
+    props.onSpinningChange?.(true);
 
     // Calculate a random number of full rotations (8-12) plus a random final position
     const minSpins = 8;
@@ -33,15 +35,14 @@ export default function SpinWheel(props: SpinWheelProps) {
     // Make sure we continue from the current rotation to prevent resetting
     const newRotation = rotation + totalDegrees;
 
-    // Update the rotation with the new value
     setRotation(newRotation);
 
     const currentPoints = [...props.points];
     const currentNames = [...props.giftNames];
 
-    // Reset spinning state after animation completes
     setTimeout(() => {
       setIsSpinning(false);
+      props.onSpinningChange?.(false);
       const winningSlice = calculateWinner(newRotation, currentPoints, currentNames);
       setWinner(winningSlice);
     }, 10000); // Match this with the CSS transition duration
@@ -61,7 +62,6 @@ export default function SpinWheel(props: SpinWheelProps) {
       const endX = CENTER.x + RADIUS * Math.cos((endAngle * Math.PI) / 180);
       const endY = CENTER.y + RADIUS * Math.sin((endAngle * Math.PI) / 180);
 
-      // Calculate text position and rotation
       const textAngle = startAngle + (sliceAngle / 2);
       const textRadius = RADIUS * 0.6;
       const textX = CENTER.x + textRadius * Math.cos((textAngle * Math.PI) / 180);
