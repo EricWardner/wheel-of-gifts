@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { calculateWinner, getWobblyLine, Point2D } from './utils';
 import './styles.css'
 import { Button, Flex } from '@radix-ui/themes';
-import SpinTheWheelTitle from '../../SpinTheWheelTitle';
+import SpinTheWheelTitle from './SpinTheWheelTitle';
 import confetti from 'canvas-confetti';
 
 interface SpinWheelProps {

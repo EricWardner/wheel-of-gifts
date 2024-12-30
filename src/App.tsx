@@ -4,7 +4,7 @@ import ControlledSpinWheel from './components/SpinWheel/ControlledSpinWheel'
 function App() {
 
   return (
-    <Flex justify={"center"} p={{ initial: "3", sm:"8" }}>
+    <Flex justify={"center"} p={{ initial: "8", sm:"8" }}>
       <ControlledSpinWheel />
     </Flex>
   )
