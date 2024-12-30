@@ -114,9 +114,13 @@ export default function SpinWheel(props: SpinWheelProps) {
 
   return (
     <Flex direction={"column"} gap={"3"} p={"4"}>
-      <SpinTheWheelTitle width='400' />
+      <SpinTheWheelTitle isSpinning={isSpinning} width='400' />
+
       <Flex justify={"center"} align={"center"}>
-        <svg height="40px" style={{ position: "relative", zIndex: 10 }} viewBox="6 4 4.5 7" xmlns="http://www.w3.org/2000/svg"><path d="M6 11L6 4L10.5 7.5L6 11Z" fill="currentColor" /></svg>
+        {/* arrow pointer */}
+        <svg height="40px" style={{ position: "relative", zIndex: 10 }} viewBox="6 4 4.5 7" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 11L6 4L10.5 7.5L6 11Z" fill="currentColor" />
+        </svg>
 
         <div
           ref={wheelRef}
