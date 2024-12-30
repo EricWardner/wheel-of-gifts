@@ -3,7 +3,7 @@ import WheelControls from './WheelControls';
 import SpinWheel from './SpinWheel';
 import { Flex } from '@radix-ui/themes';
 
-const initialGiftNames = ['Gift 1', 'Gift 2', 'Gift 3', '', '']
+const initialGiftNames = ['Socks', 'Scratch-Offs', 'A Candle', '$10,000', 'Coal']
 
 const ControlledSpinWheel: React.FC = () => {
   const [numOptions, setNumOptions] = useState<number>(5);
