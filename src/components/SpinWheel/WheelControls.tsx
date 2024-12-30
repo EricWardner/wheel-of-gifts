@@ -20,7 +20,7 @@ const WheelControls: React.FC<WheelControlsProps> = ({
   onNameChange
 }) => {
   return (
-    <Section>
+    <Section p="4">
       <Flex direction="column" gap="6" minWidth="300px">
         <Box>
           <Slider
@@ -33,8 +33,8 @@ const WheelControls: React.FC<WheelControlsProps> = ({
         </Box>
 
         <Card>
-          <ScrollArea type='auto' style={{ height: 250 }}>
-            <Flex direction="column" gap={{ initial: "8", sm: "4" }} >
+          <ScrollArea type='auto' style={{ height: 400 }}>
+            <Flex direction="column" gap={{ initial: "8", sm: "4" }} p="5">
               {points.map((point, index) => (
                 <Flex
                   key={index}
