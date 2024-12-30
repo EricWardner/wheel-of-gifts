@@ -3,6 +3,7 @@ import { calculateWinner, getWobblyLine, Point2D } from './utils';
 import './styles.css'
 import { Button, Flex } from '@radix-ui/themes';
 import SpinTheWheelTitle from '../../SpinTheWheelTitle';
+import confetti from 'canvas-confetti';
 
 interface SpinWheelProps {
   points: number[];
@@ -20,6 +21,7 @@ export default function SpinWheel(props: SpinWheelProps) {
   const CENTER: Point2D = { x: 200, y: 200 };
 
   const spinWheel = (): void => {
+    setWinner(null)
     if (isSpinning) return;
 
     setIsSpinning(true);
@@ -45,6 +47,18 @@ export default function SpinWheel(props: SpinWheelProps) {
       props.onSpinningChange?.(false);
       const winningSlice = calculateWinner(newRotation, currentPoints, currentNames);
       setWinner(winningSlice);
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { x: 0, y: 0 },
+        angle: 325
+      });
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { x: 1, y: 0 },
+        angle: 215
+      });
     }, 10000); // Match this with the CSS transition duration
   };
 
@@ -88,7 +102,7 @@ export default function SpinWheel(props: SpinWheelProps) {
             y={textY}
             fill="white"
             textAnchor="middle"
-            transform={`rotate(${textAngle -180}, ${textX}, ${textY})`}
+            transform={`rotate(${textAngle - 180}, ${textX}, ${textY})`}
             className="gift-slice-label"
           >
             {props.giftNames[index]}
@@ -100,14 +114,14 @@ export default function SpinWheel(props: SpinWheelProps) {
 
   return (
     <Flex direction={"column"} gap={"3"} p={"4"}>
-      <SpinTheWheelTitle width='400'/>
+      <SpinTheWheelTitle width='400' />
       <Flex justify={"center"} align={"center"}>
         <svg height="40px" style={{ position: "relative", zIndex: 10 }} viewBox="6 4 4.5 7" xmlns="http://www.w3.org/2000/svg"><path d="M6 11L6 4L10.5 7.5L6 11Z" fill="currentColor" /></svg>
 
         <div
           ref={wheelRef}
           className="wheel"
-          style={{ transform: `rotate(${rotation}deg)`, marginRight:20 }}
+          style={{ transform: `rotate(${rotation}deg)`, marginRight: 20 }}
         >
           <svg viewBox="50 50 304 304">
             <circle
