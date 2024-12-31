@@ -6,6 +6,10 @@ const SpinTheWheelTitle = ({ isSpinning = false, width = '154.47429mm', height =
    const totalPaths = 12; // Total number of paths in the SVG
    const animationDuration = 10000; // 10 seconds to match the wheel
 
+   if (window.innerWidth < 400) {
+      width = `${window.innerWidth*.9}`;
+   }
+
    // Function to calculate the interval time based on progress
    const getIntervalTime = (progress: number) => {
       // Start very fast (50ms) and slow down to 800ms
